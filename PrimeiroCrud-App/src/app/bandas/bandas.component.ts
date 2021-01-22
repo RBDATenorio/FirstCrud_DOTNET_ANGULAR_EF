@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandasComponent implements OnInit {
 
+  title = "Best Metal Bands Ever!"
   bandas: any;
 
   constructor(private http: HttpClient) { }

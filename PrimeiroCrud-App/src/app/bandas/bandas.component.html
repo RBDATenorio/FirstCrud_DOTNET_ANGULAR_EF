@@ -1,9 +1,16 @@
-<p>
-  bandas works!
-</p>
-
+<div>
+  <h1>Welcome to {{ title }}</h1>
+  <h4>FirstCRUD ASP.NET and Angular</h4>
+</div>
 <div *ngFor="let banda of bandas">
   Banda: {{ banda.nome }}
   <br>
   CD1: {{ banda.cD1 }}
+  <br>
+  CD2: {{ banda.cD2 }}
+  <br>
+  CD3: {{ banda.cD3 }}
+  <br>
+  CD4: {{ banda.cD4 }}
+  <hr>
 </div>
