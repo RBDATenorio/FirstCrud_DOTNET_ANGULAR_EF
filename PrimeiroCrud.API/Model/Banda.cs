@@ -8,6 +8,6 @@ namespace PrimeiroCrud.API.Model
         public string CD2 { get; set; }
         public string CD3 { get; set; }
         public string CD4 { get; set; }
-
+        public string ImgUrl { get; set; }
     }
 }

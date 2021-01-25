@@ -1,16 +1,51 @@
-<div>
-  <h1>Welcome to {{ title }}</h1>
-  <h4>FirstCRUD ASP.NET and Angular</h4>
+<div class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2"
+            [(ngModel)]="filtroLista">
+  </div>
 </div>
-<div *ngFor="let banda of bandas">
-  Banda: {{ banda.nome }}
-  <br>
-  CD1: {{ banda.cD1 }}
-  <br>
-  CD2: {{ banda.cD2 }}
-  <br>
-  CD3: {{ banda.cD3 }}
-  <br>
-  CD4: {{ banda.cD4 }}
-  <hr>
-</div>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <button (click)="alternarImg()"
+                class="btn btn-outline-primary">Mostrar Imagem</button>
+      </th>
+      <th>Nome</th>
+      <th>CD1</th>
+      <th>CD2</th>
+      <th>CD3</th>
+      <th>CD4</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="bandas && bandas.length">
+    <tr *ngFor="let banda of bandasFiltradas">
+      <td>
+        <img  *ngIf="!mostrarImg"
+              src="http://localhost:5000/img/{{banda.imgUrl}}"
+              [style.width.px]="imgLarg"
+              [style.margin.px]="imgMarg">
+      </td>
+      <td>{{ banda.nome }}</td>
+      <td>{{ banda.cD1 }}</td>
+      <td>{{ banda.cD2 }}</td>
+      <td>{{ banda.cD3 }}</td>
+      <td>{{ banda.cD4 }}</td>
+      <td>
+        <button class="btn btn-success mr-1"></button>
+        <button class="btn btn-danger"></button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!bandas.length">
+    <tr>
+      <td colspan="7" class="text-center">
+        Nenhuma Banda encontrada!
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<!--PAREI NA AULA 37-->
